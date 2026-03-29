@@ -10,6 +10,26 @@
     /* inclui bordas no tamanho total */
 }
 
+:root {
+    --text-color: #ffffff;
+    --title-color: #e50914;
+    --caption-color: #f41111;
+    --overlay-color: rgba(0, 0, 0, 0.55);
+    --theme-control-bg: rgba(10, 10, 10, 0.65);
+    --theme-control-border: rgba(255, 255, 255, 0.3);
+    --theme-control-text: #ffffff;
+}
+
+body[data-theme="light"] {
+    --text-color: #151515;
+    --title-color: #b1060f;
+    --caption-color: #8f0f17;
+    --overlay-color: rgba(255, 255, 255, 0.55);
+    --theme-control-bg: rgba(255, 255, 255, 0.75);
+    --theme-control-border: rgba(0, 0, 0, 0.2);
+    --theme-control-text: #141414;
+}
+
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     /* fonte limpa e sem serifa */
@@ -21,7 +41,7 @@ body {
     /* centraliza a imagem */
     background-attachment: scroll;
     /* comportamento padrão, otimizado para mobile */
-    color: #ffffff;
+    color: var(--text-color);
     /* texto branco para contraste */
     min-height: 100vh;
     /* altura mínima 100% da viewport */
@@ -31,6 +51,20 @@ body {
     /* centro horizontal */
     align-items: center;
     /* centro vertical */
+    position: relative;
+    /* cria contexto para camada de contraste do fundo */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--overlay-color);
+    z-index: 0;
+    pointer-events: none;
 }
 
 main {
@@ -42,6 +76,33 @@ main {
     /* limita largura para legibilidade */
     padding: 20px;
     /* espaçamento interno ao redor */
+    position: relative;
+    z-index: 1;
+}
+
+.theme-picker {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.theme-picker label {
+    color: var(--theme-control-text);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.theme-picker select {
+    background: var(--theme-control-bg);
+    color: var(--theme-control-text);
+    border: 1px solid var(--theme-control-border);
+    border-radius: 6px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.95rem;
 }
 
 h1 {
@@ -49,13 +110,24 @@ h1 {
     /* tamanho grande para destaque */
     margin-bottom: 2rem;
     /* distância inferior do título */
-    color: #e50914;
+    color: var(--title-color);
     /* vermelho Netflix */
     font-weight: 700;
     /* negrito para peso visual */
 }
 
 .profiles-section {
+    width: 100%;
+    /* ocupa largura disponível */
+    max-width: 900px;
+    /* limita largura do bloco de perfis */
+    margin: 0 auto;
+    /* centraliza a seção de perfis */
+    display: flex;
+    justify-content: center;
+}
+
+.profiles-list {
     display: flex;
     /* layout em linha flexível */
     justify-content: center;
@@ -68,6 +140,12 @@ h1 {
     /* ocupa largura disponível */
     max-width: 900px;
     /* limita largura para 5 perfis lado a lado em desktop */
+    list-style: none;
+    /* remove numeração visual da lista */
+    margin: 0 auto;
+    /* remove margem padrão e centraliza a lista */
+    padding: 0;
+    /* remove recuo padrão da ol */
 }
 
 .profile {
@@ -115,7 +193,7 @@ h1 {
     /* tamanho de fonte do nome do perfil */
     font-weight: 500;
     /* peso intermediário */
-    color: #f41111;
+    color: var(--caption-color);
     /* garante cor branca */
     word-break: break-word;
     /* quebra palavras longas */
@@ -148,13 +226,19 @@ h1 {
         /* adiciona espaço no topo */
     }
 
-    .profiles-section {
-        flex-direction: column;
-        /* empilha perfis verticalmente */
+    .profiles-list {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        /* duas colunas ajustadas ao conteúdo */
+        justify-content: center;
+        /* centraliza o grid na tela */
         gap: 1.5rem;
-        /* espaço entre perfis */
-        align-items: center;
-        /* centraliza cada perfil */
+    }
+
+    /* 5º perfil sozinho na última linha: ocupa as duas colunas centralizado */
+    .profiles-list li:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
     }
 
     .profile img {
@@ -186,10 +270,18 @@ h1 {
         margin-bottom: 2rem;
     }
 
-    .profiles-section {
-        gap: 1.5rem;
-        /* espaço entre perfis */
+    .profiles-list {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        /* duas colunas ajustadas ao conteúdo */
         justify-content: center;
+        /* centraliza o grid na tela */
+        gap: 1.5rem;
+    }
+
+    .profiles-list li:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
     }
 
     .profile img {
@@ -220,7 +312,7 @@ h1 {
         margin-bottom: 2.5rem;
     }
 
-    .profiles-section {
+    .profiles-list {
         gap: 2.5rem;
         /* espaço generoso entre perfis */
         flex-wrap: wrap;
@@ -262,7 +354,7 @@ h1 {
         margin-bottom: 3rem;
     }
 
-    .profiles-section {
+    .profiles-list {
         gap: 3rem;
         /* espaço amplo entre perfis */
     }
@@ -299,7 +391,7 @@ h1 {
         /* reduz margem em landscape */
     }
 
-    .profiles-section {
+    .profiles-list {
         gap: 1rem;
         /* espaço reduzido */
         flex-direction: row;
