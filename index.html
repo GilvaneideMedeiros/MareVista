@@ -8,27 +8,33 @@
     <!-- Responsividade: largura igual à da viewport e escala inicial 1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título da página exibido na aba do navegador -->
-    <title>Netflix</title>
+    <title>MareVista | Perfis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Link para arquivo CSS externo com os estilos do site -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Splash Screen Netflix -->
+    <!-- Tela de abertura da plataforma -->
     <div id="splash" class="splash-screen">
-        <span class="netflix-logo">Netflix</span>
+        <div class="brand-splash">
+            <span class="brand-wordmark">MareVista</span>
+            <span class="brand-tagline">cinema em camadas</span>
+        </div>
     </div>
     <!-- Seletor de tema fixo no canto superior direito -->
     <div class="theme-picker">
-        <label for="theme-select">Tema:</label>
+        <label for="theme-select">Ambiente:</label>
         <select id="theme-select" aria-label="Selecionar tema da tela">
-            <option value="black">Tela preta</option>
-            <option value="light">Claro</option>
+            <option value="black">Noite</option>
+            <option value="light">Brisa</option>
         </select>
     </div>
     <!-- Conteúdo principal da página -->
     <main>
         <!-- Título de topo que pergunta quem está assistindo -->
-        <h1>Quem está assistindo?</h1>
+        <h1>Escolha sua atmosfera</h1>
         <!-- Seção que agrupa os perfis de usuários -->
         <section class="profiles-section">
             <!-- Lista ordenada de perfis para melhorar a semântica -->

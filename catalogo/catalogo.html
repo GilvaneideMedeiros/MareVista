@@ -4,47 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Clone</title>
+    <title>MareVista | Sala Principal</title>
     <link rel="stylesheet" href="catalogo.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body data-theme="black">
     <!-- Navbar -->
     <header class="navbar" id="navbar">
         <div class="navbar-left">
-            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-                alt="Netflix">
+            <a href="../index.html" class="brand-logo" aria-label="Voltar para a selecao de perfis da MareVista">
+                <span class="brand-logo-badge">MV</span>
+                <span class="brand-logo-text">MareVista</span>
+            </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="https://www.alura.com.br/" class="active">Início</a></li>
-                    <li><a href="https://www.alura.com.br/">Séries</a></li>
-                    <li><a href="https://www.alura.com.br/">Filmes</a></li>
-                    <li><a href="https://www.alura.com.br/">Jogos</a></li>
-                    <li><a href="https://www.alura.com.br/">Bombando</a></li>
-                    <li><a href="https://www.alura.com.br/">Minha lista</a></li>
-                    <li><a href="https://www.alura.com.br/">Melhores da Alura</a></li>
+                    <li><a href="#" class="active">Descobrir</a></li>
+                    <li><a href="#">Colecoes</a></li>
+                    <li><a href="#">Curtas</a></li>
+                    <li><a href="#">Sessao Azul</a></li>
+                    <li><a href="#">Ao vivo</a></li>
+                    <li><a href="#">Minha orbita</a></li>
+                    <li><a href="#">Lancamentos</a></li>
                 </ul>
             </nav>
         </div>
         <div class="navbar-right">
             <div class="theme-picker">
-                <label for="catalog-theme-select" id="catalog-theme-label">Tema do perfil</label>
+                <label for="catalog-theme-select" id="catalog-theme-label">Ambiente do perfil</label>
                 <select id="catalog-theme-select" aria-label="Selecionar tema do catalogo do perfil ativo">
-                    <option value="black">Tela preta</option>
-                    <option value="light">Tela branca</option>
+                    <option value="black">Noite</option>
+                    <option value="light">Brisa</option>
                 </select>
             </div>
             <i class="fas fa-search icon"></i>
-            <a href="../index.html" class="kids-link">Seu nome</a>
+            <a href="../index.html" class="kids-link">Visitante</a>
             <div class="nav-notification">
                 <i class="fas fa-bell icon"></i>
-                <span class="notification-badge">42</span>
+                <span class="notification-badge">8</span>
             </div>
             <a href="../index.html" class="profile-menu">
-                <img class="profile-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-                    alt="Profile">
+                <img class="profile-icon" src="../assets/perfil1.jpg"
+                    alt="Perfil ativo">
                 <i class="fas fa-caret-down icon profile-menu-caret"></i>
             </a>
         </div>
@@ -58,25 +62,25 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <a href="https://www.alura.com.br/" target="_blank" rel="noopener">
-                <p>Imersão Alura AI</p>
+            <a href="#">
+                <p>MareVista Studio</p>
             </a>
             <ul class="footer-links">
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Perguntas frequentes</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Centro de ajuda</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Conta</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Imprensa</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Relações com investidores</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Carreiras</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Formas de assistir</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Termos de uso</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Privacidade</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Preferências de cookies</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Informações corporativas</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Entre em contato</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Teste de velocidade</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Avisos legais</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank" rel="noopener">Só na Netflix</a></li>
+                <li><a href="#">Perguntas frequentes</a></li>
+                <li><a href="#">Central de apoio</a></li>
+                <li><a href="#">Planos e acesso</a></li>
+                <li><a href="#">Sala da imprensa</a></li>
+                <li><a href="#">Parcerias</a></li>
+                <li><a href="#">Carreiras</a></li>
+                <li><a href="#">Dispositivos</a></li>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Privacidade</a></li>
+                <li><a href="#">Preferencias de cookies</a></li>
+                <li><a href="#">Informacoes corporativas</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Status da plataforma</a></li>
+                <li><a href="#">Diretrizes visuais</a></li>
+                <li><a href="#">Exclusivos MareVista</a></li>
             </ul>
         </div>
     </footer>

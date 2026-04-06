@@ -8,20 +8,20 @@ export function createCard(item) {
     }
 
     const img = document.createElement('img');
-    img.alt = `Movie cover`;
+    img.alt = `Capa do titulo`;
 
+    const videoId = getYouTubeId(item.youtube);
+    const hasVideo = Boolean(videoId);
     const iframe = document.createElement('iframe');
     iframe.frameBorder = "0";
     iframe.allow = "autoplay; encrypted-media";
 
-    const videoId = getYouTubeId(item.youtube);
-
-    const stableYouTubeThumb = `https://img.youtube.com/vi/${videoId}/0.jpg`;
+    const stableYouTubeThumb = hasVideo ? `https://img.youtube.com/vi/${videoId}/0.jpg` : item.img;
     const isYouTubeThumb = item.img.includes('ytimg.com') || item.img.includes('img.youtube.com');
 
     const fallbackThumbs = [
         stableYouTubeThumb,
-        `https://picsum.photos/seed/${videoId}/600/338`,
+        `https://picsum.photos/seed/${videoId || encodeURIComponent(item.img)}/600/338`,
     ];
 
     let fallbackIndex = 0;
@@ -35,7 +35,9 @@ export function createCard(item) {
         }
     });
 
-    card.appendChild(iframe);
+    if (hasVideo) {
+        card.appendChild(iframe);
+    }
     card.appendChild(img);
 
     const ageBadge = getRandomAgeBadge();
@@ -54,15 +56,15 @@ export function createCard(item) {
             </div>
         </div>
         <div class="details-info">
-            <span class="match-score">${getRandomMatchScore()}% relevante</span>
+            <span class="match-score">${getRandomMatchScore()}% afinidade</span>
             <span class="age-badge ${ageBadge.class}">${ageBadge.text}</span>
             <span class="duration">${getRandomDuration(item.progress)}</span>
             <span class="resolution">HD</span>
         </div>
         <div class="details-tags">
-            <span>Empolgante</span>
-            <span>Animação</span>
-            <span>Ficção</span>
+            <span>Curadoria</span>
+            <span>Visual</span>
+            <span>Maratona</span>
         </div>
     `;
     card.appendChild(details);
@@ -94,6 +96,10 @@ export function createCard(item) {
             card.classList.add('origin-right');
         }
 
+        if (!hasVideo) {
+            return;
+        }
+
         playTimeout = setTimeout(() => {
             iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&loop=1&playlist=${videoId}`;
             iframe.classList.add('playing');
@@ -103,9 +109,11 @@ export function createCard(item) {
 
     card.addEventListener('mouseleave', () => {
         clearTimeout(playTimeout);
-        iframe.classList.remove('playing');
-        img.classList.remove('playing-video');
-        iframe.src = "";
+        if (hasVideo) {
+            iframe.classList.remove('playing');
+            img.classList.remove('playing-video');
+            iframe.src = "";
+        }
         card.classList.remove('origin-left');
         card.classList.remove('origin-right');
 

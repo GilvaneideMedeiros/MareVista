@@ -1,52 +1,54 @@
 :root {
-    --netflix-red: #E50914;
-    --page-bg: #141414;
-    --page-bg-accent: #141414;
-    --text-color: #ffffff;
-    --muted-text: #e5e5e5;
-    --secondary-text: rgba(255, 255, 255, 0.9);
-    --soft-text: #737373;
-    --nav-bg: rgba(20, 20, 20, 0.96);
-    --card-bg: #222222;
-    --card-details-bg: #181818;
-    --indicator-bg: #4d4d4d;
-    --indicator-active-bg: #aaaaaa;
-    --icon-button-bg: #2b2b2b;
-    --icon-button-border: rgba(255, 255, 255, 0.5);
-    --icon-button-hover-bg: rgba(255, 255, 255, 0.2);
-    --play-button-bg: #ffffff;
-    --play-button-text: #000000;
-    --card-shadow: rgba(0, 0, 0, 0.9);
-    --progress-track: rgba(100, 100, 100, 0.7);
-    --ui-border: rgba(255, 255, 255, 0.4);
-    --theme-picker-bg: rgba(255, 255, 255, 0.08);
-    --theme-picker-border: rgba(255, 255, 255, 0.14);
-    --theme-picker-text: #ffffff;
+    --accent-primary: #72e6dd;
+    --accent-strong: #2db7b0;
+    --accent-soft: rgba(114, 230, 221, 0.18);
+    --page-bg: #04090b;
+    --page-bg-accent: #071217;
+    --text-color: #f2fffe;
+    --muted-text: #d8f7f4;
+    --secondary-text: rgba(233, 255, 253, 0.76);
+    --soft-text: #7ea6a3;
+    --nav-bg: rgba(4, 10, 12, 0.76);
+    --card-bg: #0b171b;
+    --card-details-bg: rgba(8, 19, 24, 0.96);
+    --indicator-bg: rgba(114, 230, 221, 0.24);
+    --indicator-active-bg: #72e6dd;
+    --icon-button-bg: rgba(114, 230, 221, 0.08);
+    --icon-button-border: rgba(114, 230, 221, 0.28);
+    --icon-button-hover-bg: rgba(114, 230, 221, 0.18);
+    --play-button-bg: #72e6dd;
+    --play-button-text: #042126;
+    --card-shadow: rgba(0, 0, 0, 0.44);
+    --progress-track: rgba(114, 230, 221, 0.18);
+    --ui-border: rgba(114, 230, 221, 0.24);
+    --theme-picker-bg: rgba(114, 230, 221, 0.08);
+    --theme-picker-border: rgba(114, 230, 221, 0.16);
+    --theme-picker-text: #ebfffd;
 }
 
 body[data-theme="light"] {
-    --page-bg: #f4f6fb;
-    --page-bg-accent: #e8edf6;
-    --text-color: #171717;
-    --muted-text: #1f2937;
-    --secondary-text: #374151;
-    --soft-text: #52525b;
-    --nav-bg: rgba(255, 255, 255, 0.92);
-    --card-bg: #d9dfeb;
-    --card-details-bg: #ffffff;
-    --indicator-bg: #c7d0dd;
-    --indicator-active-bg: #667085;
-    --icon-button-bg: #edf2f7;
-    --icon-button-border: rgba(15, 23, 42, 0.18);
-    --icon-button-hover-bg: rgba(15, 23, 42, 0.08);
-    --play-button-bg: #111827;
+    --page-bg: #f3fffe;
+    --page-bg-accent: #dff7f5;
+    --text-color: #122328;
+    --muted-text: #1b4548;
+    --secondary-text: #35666a;
+    --soft-text: #5f7c80;
+    --nav-bg: rgba(255, 255, 255, 0.86);
+    --card-bg: #d7f2ef;
+    --card-details-bg: rgba(255, 255, 255, 0.96);
+    --indicator-bg: rgba(8, 93, 99, 0.16);
+    --indicator-active-bg: #0e858b;
+    --icon-button-bg: rgba(14, 133, 139, 0.06);
+    --icon-button-border: rgba(14, 133, 139, 0.16);
+    --icon-button-hover-bg: rgba(14, 133, 139, 0.12);
+    --play-button-bg: #12343a;
     --play-button-text: #ffffff;
-    --card-shadow: rgba(15, 23, 42, 0.22);
-    --progress-track: rgba(15, 23, 42, 0.12);
-    --ui-border: rgba(15, 23, 42, 0.2);
-    --theme-picker-bg: rgba(17, 24, 39, 0.06);
-    --theme-picker-border: rgba(15, 23, 42, 0.12);
-    --theme-picker-text: #111827;
+    --card-shadow: rgba(18, 35, 40, 0.14);
+    --progress-track: rgba(14, 133, 139, 0.12);
+    --ui-border: rgba(14, 133, 139, 0.16);
+    --theme-picker-bg: rgba(14, 133, 139, 0.06);
+    --theme-picker-border: rgba(14, 133, 139, 0.1);
+    --theme-picker-text: #16373d;
 }
 
 * {
@@ -56,8 +58,11 @@ body[data-theme="light"] {
 }
 
 body {
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: linear-gradient(180deg, var(--page-bg-accent) 0%, var(--page-bg) 18%, var(--page-bg) 100%);
+    font-family: 'Sora', 'Segoe UI', sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(114, 230, 221, 0.13), transparent 26%),
+        radial-gradient(circle at 85% 12%, rgba(114, 230, 221, 0.1), transparent 18%),
+        linear-gradient(180deg, var(--page-bg-accent) 0%, var(--page-bg) 22%, var(--page-bg) 100%);
     color: var(--text-color);
     overflow-x: hidden;
 }
@@ -94,17 +99,44 @@ a:hover {
     gap: 20px;
 }
 
-.logo {
-    width: 92px;
-    margin-right: 25px;
-    cursor: pointer;
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 10px;
+    color: var(--text-color);
+}
+
+.brand-logo-badge {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent-primary), #173e43);
+    color: #021215;
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.brand-logo-text {
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-    font-size: 13px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .nav-links .active {
@@ -117,16 +149,18 @@ a:hover {
     align-items: center;
     gap: 10px;
     padding: 8px 12px;
-    border-radius: 999px;
+    border-radius: 18px;
     background-color: var(--theme-picker-bg);
     border: 1px solid var(--theme-picker-border);
 }
 
 .theme-picker label {
     color: var(--theme-picker-text);
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 700;
     white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .theme-picker select {
@@ -156,8 +190,8 @@ a:hover {
     position: absolute;
     top: -5px;
     right: -8px;
-    background-color: var(--netflix-red);
-    color: #ffffff;
+    background-color: var(--accent-primary);
+    color: #042126;
     font-size: 10px;
     font-weight: bold;
     border-radius: 50%;
@@ -183,7 +217,10 @@ a:hover {
 
 .profile-icon {
     width: 32px;
-    border-radius: 4px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--ui-border);
 }
 
 .sliders-container {
@@ -206,10 +243,12 @@ a:hover {
 }
 
 .slider-title {
-    font-size: 1.25vw;
-    font-weight: bold;
+    font-size: 1.05vw;
+    font-weight: 700;
     color: var(--muted-text);
     line-height: 1.25vw;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .slider-indicators {
@@ -236,12 +275,10 @@ a:hover {
     padding: 10px 4% 50px 4%;
     margin: 0 -4%;
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: var(--indicator-bg) transparent;
 }
 
 .movie-row.expanded {
-    padding-bottom: 210px;
+    padding-bottom: 155px;
 }
 
 .movie-row::-webkit-scrollbar {
@@ -262,12 +299,14 @@ a:hover {
     width: 250px;
     height: 140px;
     background-color: var(--card-bg);
-    border-radius: 4px;
+    border-radius: 22px;
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, border-radius 0.3s 0s, z-index 0s 0.3s, box-shadow 0.3s 0s;
+    transition: transform 0.28s ease, border-color 0.28s ease, z-index 0s 0.28s, box-shadow 0.28s ease;
     position: relative;
     z-index: 1;
     transform-origin: center center;
+    border: 1px solid rgba(114, 230, 221, 0.06);
+    overflow: visible;
 }
 
 .movie-card.origin-left {
@@ -279,11 +318,11 @@ a:hover {
 }
 
 .movie-card:hover {
-    transform: scale(1.6) translateY(-5%);
+    transform: translateY(-16px) scale(1.12);
     z-index: 99;
-    border-radius: 6px;
-    box-shadow: 0 10px 40px var(--card-shadow);
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s, border-radius 0.3s 0.6s, box-shadow 0.3s 0.6s, z-index 0s 0s;
+    border-color: rgba(114, 230, 221, 0.28);
+    box-shadow: 0 24px 45px var(--card-shadow), 0 0 0 1px rgba(114, 230, 221, 0.16);
+    transition: transform 0.28s ease 0.28s, border-color 0.28s ease 0.28s, box-shadow 0.28s ease 0.28s, z-index 0s 0s;
 }
 
 .movie-card img {
@@ -293,7 +332,7 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 22px;
     transition: opacity 0.3s ease, border-radius 0.3s;
     z-index: 2;
 }
@@ -305,7 +344,7 @@ a:hover {
     width: 100%;
     height: 100%;
     opacity: 0;
-    border-radius: 4px;
+    border-radius: 22px;
     transition: opacity 0.3s ease, border-radius 0.3s;
     pointer-events: none;
     z-index: 1;
@@ -314,12 +353,12 @@ a:hover {
 .movie-card iframe.playing {
     opacity: 1;
     z-index: 3;
-    border-radius: 6px 6px 0 0;
+    border-radius: 22px 22px 0 0;
 }
 
 .movie-card:hover img {
-    border-radius: 6px 6px 0 0;
-    transition: border-radius 0s 0.6s;
+    border-radius: 22px 22px 0 0;
+    transition: border-radius 0s 0.28s;
 }
 
 .movie-card img.playing-video {
@@ -332,24 +371,27 @@ a:hover {
     left: 0;
     width: 100%;
     background-color: var(--card-details-bg);
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
     padding: 18px 16px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s 0s, visibility 0.3s 0s;
-    box-shadow: 0 15px 30px var(--card-shadow);
+    transform: translateY(10px);
+    transition: opacity 0.25s 0s, visibility 0.25s 0s, transform 0.25s 0s;
+    box-shadow: 0 18px 30px var(--card-shadow);
     display: flex;
     flex-direction: column;
     gap: 12px;
     z-index: 2;
     cursor: default;
+    border-top: 1px solid rgba(114, 230, 221, 0.14);
 }
 
 .movie-card:hover .card-details {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.2s 0.6s, visibility 0s 0.6s;
+    transform: translateY(0);
+    transition: opacity 0.2s 0.28s, visibility 0s 0.28s, transform 0.2s 0.28s;
 }
 
 .details-buttons {
@@ -367,7 +409,7 @@ a:hover {
 .btn-icon {
     width: 32px;
     height: 32px;
-    border-radius: 50%;
+    border-radius: 12px;
     background-color: var(--icon-button-bg);
     border: 1px solid var(--icon-button-border);
     color: var(--text-color);
@@ -391,11 +433,11 @@ a:hover {
 }
 
 .btn-play-icon:hover {
-    background-color: #e6e6e6;
+    background-color: #92fff6;
 }
 
 body[data-theme="light"] .btn-play-icon:hover {
-    background-color: #1f2937;
+    background-color: #23484d;
 }
 
 .btn-play-icon i {
@@ -411,7 +453,7 @@ body[data-theme="light"] .btn-play-icon:hover {
 }
 
 .match-score {
-    color: #46d369;
+    color: var(--accent-primary);
 }
 
 .age-badge {
@@ -424,9 +466,9 @@ body[data-theme="light"] .btn-play-icon:hover {
 }
 
 .age-badge.red-accent {
-    background-color: #d32f2f;
+    background-color: var(--accent-strong);
     border: none;
-    color: #ffffff;
+    color: #04191d;
     font-weight: bold;
 }
 
@@ -461,8 +503,8 @@ body[data-theme="light"] .btn-play-icon:hover {
     right: 0;
     width: 22px;
     height: 28px;
-    background-color: var(--netflix-red);
-    color: #ffffff;
+    background-color: var(--accent-primary);
+    color: #042126;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -504,8 +546,8 @@ body[data-theme="light"] .btn-play-icon:hover {
 }
 
 .badge-bottom.red {
-    background-color: var(--netflix-red);
-    color: #ffffff;
+    background-color: var(--accent-strong);
+    color: #f7ffff;
 }
 
 .badge-bottom.white {
@@ -527,7 +569,7 @@ body[data-theme="light"] .btn-play-icon:hover {
 
 .progress-value {
     height: 100%;
-    background-color: var(--netflix-red);
+    background-color: var(--accent-primary);
     border-bottom-left-radius: 4px;
 }
 
@@ -536,6 +578,7 @@ footer {
     color: var(--soft-text);
     font-size: 13px;
     margin-bottom: 20px;
+    border-top: 1px solid rgba(114, 230, 221, 0.12);
 }
 
 .footer-content {
@@ -545,6 +588,12 @@ footer {
 
 .footer-content p {
     margin-bottom: 30px;
+    color: var(--muted-text);
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .footer-links {

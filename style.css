@@ -1,4 +1,4 @@
-/* Estilos inspirados na Netflix */
+/* Estilos da landing de perfis da MareVista */
 
 /* Reset básico para evitar espaçamentos e bordas inesperadas */
 * {
@@ -11,54 +11,55 @@
 }
 
 :root {
-    --text-color: #ffffff;
-    --title-color: #e50914;
-    --caption-color: #f41111;
-    --overlay-color: rgba(0, 0, 0, 0.55);
-    --theme-control-bg: rgba(10, 10, 10, 0.65);
-    --theme-control-border: rgba(255, 255, 255, 0.3);
-    --theme-control-text: #ffffff;
+    --text-color: #f5fffe;
+    --title-color: #7be7df;
+    --caption-color: #b8fffb;
+    --overlay-color: linear-gradient(135deg, rgba(3, 10, 14, 0.82), rgba(0, 0, 0, 0.55));
+    --theme-control-bg: rgba(13, 28, 32, 0.72);
+    --theme-control-border: rgba(123, 231, 223, 0.35);
+    --theme-control-text: #ebfffd;
+    --panel-bg: rgba(7, 18, 22, 0.62);
+    --panel-border: rgba(123, 231, 223, 0.18);
+    --panel-shadow: rgba(0, 0, 0, 0.45);
+    --profile-outline: rgba(123, 231, 223, 0.38);
+    --profile-highlight: rgba(123, 231, 223, 0.22);
 }
 
 body[data-theme="light"] {
-    --text-color: #151515;
-    --title-color: #b1060f;
-    --caption-color: #8f0f17;
-    --overlay-color: rgba(255, 255, 255, 0.55);
-    --theme-control-bg: rgba(255, 255, 255, 0.75);
-    --theme-control-border: rgba(0, 0, 0, 0.2);
-    --theme-control-text: #141414;
+    --text-color: #0f1c20;
+    --title-color: #056d73;
+    --caption-color: #0c5257;
+    --overlay-color: linear-gradient(135deg, rgba(240, 255, 254, 0.84), rgba(214, 245, 242, 0.62));
+    --theme-control-bg: rgba(255, 255, 255, 0.82);
+    --theme-control-border: rgba(5, 109, 115, 0.18);
+    --theme-control-text: #123037;
+    --panel-bg: rgba(255, 255, 255, 0.68);
+    --panel-border: rgba(5, 109, 115, 0.14);
+    --panel-shadow: rgba(16, 37, 43, 0.12);
+    --profile-outline: rgba(5, 109, 115, 0.24);
+    --profile-highlight: rgba(5, 109, 115, 0.12);
 }
 
 body[data-theme="black"] {
-    --overlay-color: transparent;
-    background-image: none;
-    background-color: #000000;
+    background-color: #020607;
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    /* fonte limpa e sem serifa */
-    background-image: url('/assets/fundo.jpg');
-    /* imagem de fundo inspirada na Netflix */
+    font-family: 'Sora', 'Segoe UI', sans-serif;
+    background-image:
+        radial-gradient(circle at top left, rgba(102, 231, 222, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(64, 140, 145, 0.16), transparent 28%),
+        url('assets/fundo.jpg');
     background-size: cover;
-    /* cobre toda a área do body */
     background-position: center;
-    /* centraliza a imagem */
     background-attachment: scroll;
-    /* comportamento padrão, otimizado para mobile */
     color: var(--text-color);
-    /* texto branco para contraste */
     min-height: 100vh;
-    /* altura mínima 100% da viewport */
     display: flex;
-    /* usa flexbox no body para centralizar */
     justify-content: center;
-    /* centro horizontal */
     align-items: center;
-    /* centro vertical */
     position: relative;
-    /* cria contexto para camada de contraste do fundo */
+    overflow-x: hidden;
 }
 
 body::before {
@@ -73,17 +74,32 @@ body::before {
     pointer-events: none;
 }
 
+body::after {
+    content: "";
+    position: fixed;
+    inset: auto -12vw -24vh auto;
+    width: 34rem;
+    height: 34rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(123, 231, 223, 0.18) 0%, rgba(123, 231, 223, 0) 68%);
+    filter: blur(10px);
+    z-index: 0;
+    pointer-events: none;
+}
+
 main {
     text-align: center;
-    /* centraliza texto dentro de main */
     width: 100%;
-    /* ocupa a largura disponível */
     max-width: 800px;
-    /* limita largura para legibilidade */
-    padding: 20px;
-    /* espaçamento interno ao redor */
+    padding: 32px;
     position: relative;
     z-index: 1;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 36px;
+    box-shadow: 0 24px 80px var(--panel-shadow);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
 }
 
 .theme-picker {
@@ -94,12 +110,21 @@ main {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    padding: 0.65rem 0.9rem;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px var(--panel-shadow);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 }
 
 .theme-picker label {
     color: var(--theme-control-text);
-    font-size: 0.95rem;
+    font-size: 0.78rem;
     font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .theme-picker select {
@@ -112,14 +137,25 @@ main {
 }
 
 h1 {
-    font-size: 3rem;
-    /* tamanho grande para destaque */
-    margin-bottom: 2rem;
-    /* distância inferior do título */
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.4rem);
+    margin-bottom: 0.75rem;
     color: var(--title-color);
-    /* vermelho Netflix */
-    font-weight: 700;
-    /* negrito para peso visual */
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-shadow: 0 0 30px rgba(123, 231, 223, 0.18);
+}
+
+h1::after {
+    content: "Perfis com clima proprio para entrar na sua sala principal.";
+    display: block;
+    margin-top: 1rem;
+    color: var(--text-color);
+    font-family: 'Sora', 'Segoe UI', sans-serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    opacity: 0.9;
 }
 
 .profiles-section {
@@ -172,43 +208,37 @@ h1 {
 }
 
 .profile:hover {
-    transform: scale(1.1);
-    /* leve zoom no hover */
+    transform: translateY(-10px) scale(1.03);
 }
 
 .profile img {
-    border-radius: 50%;
-    /* deixa todas as imagens perfeitamente redondas */
-    border: none;
-    /* borda vermelha fina e igual para todos */
-    background: none;
-    /* remove fundo branco */
+    width: 136px;
+    height: 136px;
+    border-radius: 30px;
+    border: 1px solid var(--profile-outline);
+    background: rgba(255, 255, 255, 0.04);
     object-fit: cover;
-    /* cobre o container recortando parte se necessário */
-    box-shadow: none;
-    /* remove qualquer sombra padrão */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     display: block;
-    /* remove espaço em branco embaixo */
     max-width: 100%;
-    /* nunca ultrapassa 100% */
+    padding: 4px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .profile:hover img {
-    box-shadow: 0 0 12px 2px #0005;
-    /* brilho vermelho ao passar o mouse */
+    transform: rotate(-2deg);
+    border-color: var(--title-color);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.32), 0 0 0 10px var(--profile-highlight);
 }
 
 .profile figcaption {
     margin-top: 1rem;
-    /* margem entre imagem e legenda */
-    font-size: 1.2rem;
-    /* tamanho de fonte do nome do perfil */
-    font-weight: 500;
-    /* peso intermediário */
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--caption-color);
-    /* garante cor branca */
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     word-break: break-word;
-    /* quebra palavras longas */
 }
 
 /* Responsividade */
@@ -458,14 +488,14 @@ h1 {
     }
 }
 
-/* Splash Screen Netflix */
+/* Tela de abertura */
 .splash-screen {
     position: fixed;
     z-index: 9999;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: #000;
+    background: radial-gradient(circle at center, rgba(18, 54, 60, 0.92), rgba(1, 5, 7, 0.98));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -478,20 +508,48 @@ h1 {
     pointer-events: none;
     transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
 }
-.netflix-logo {
-    font-family: 'Arial Black', Arial, sans-serif;
-    font-size: 4.5rem;
-    color: #e50914;
-    letter-spacing: 0.15em;
-    text-shadow: 0 0 40px #e50914, 0 0 80px #000;
-    animation: netflix-logo-zoom 1.5s cubic-bezier(.4,0,.2,1) 0.2s both;
+.brand-splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-wordmark {
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    font-size: clamp(3rem, 8vw, 5.6rem);
+    font-weight: 800;
+    color: #7be7df;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 0 26px rgba(123, 231, 223, 0.35), 0 0 80px rgba(0, 0, 0, 0.5);
+    animation: brand-pulse 1.5s cubic-bezier(.4,0,.2,1) 0.15s both;
     opacity: 0;
 }
-@keyframes netflix-logo-zoom {
-    0% { opacity: 0; transform: scale(0.7); filter: blur(8px); }
-    60% { opacity: 1; transform: scale(1.1); filter: blur(0); }
+
+.brand-tagline {
+    color: rgba(235, 255, 253, 0.82);
+    font-family: 'Sora', 'Segoe UI', sans-serif;
+    font-size: 0.92rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    animation: brand-fade-up 1.2s ease 0.5s both;
+    opacity: 0;
+}
+
+@keyframes brand-pulse {
+    0% { opacity: 0; transform: scale(0.88); filter: blur(10px); }
+    55% { opacity: 1; transform: scale(1.04); filter: blur(0); }
     100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
+
+@keyframes brand-fade-up {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 @media (max-width: 600px) {
-    .netflix-logo { font-size: 2.2rem; }
+    .brand-tagline {
+        letter-spacing: 0.18em;
+        font-size: 0.72rem;
+    }
 }
