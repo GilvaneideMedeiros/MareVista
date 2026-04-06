@@ -4,6 +4,8 @@ A MareVista é uma interface front-end de streaming criada para demonstrar desig
 
 O projeto foi construído com HTML, CSS e JavaScript, com foco em portfólio e evolução prática de front-end.
 
+Este projeto também foi desenvolvido como prática da Imersão Front-end da Alura.
+
 ## Destaques
 
 - Seleção de perfis com navegação fluida para o catálogo.
