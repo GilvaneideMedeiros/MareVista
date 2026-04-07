@@ -1,10 +1,54 @@
-# MareVista - Experiência de Streaming Fictícia
+<h1 align="center">MareVista</h1>
 
-A MareVista é uma interface front-end de streaming criada para demonstrar design visual, personalização por perfil e navegação dinâmica em uma experiência inspirada em produtos reais, mas com identidade própria.
+<p align="center">
+   Interface front-end de streaming com foco em identidade visual, perfis personalizados e navegação dinâmica.
+</p>
+
+<p align="center">
+   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111" alt="JavaScript" />
+   <img src="https://img.shields.io/badge/GitHub%20Pages-121013?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages" />
+   <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+</p>
+
+<p align="center">
+   <img src="https://img.shields.io/badge/Projeto%20de%20Pr%C3%A1tica-Imers%C3%A3o%20Front--end%20Alura-00A9B7?style=flat-square" alt="Imersão Front-end Alura" />
+</p>
+
+<p align="center">
+   <img src="https://img.shields.io/github/actions/workflow/status/GilvaneideMedeiros/MareVista/deploy-pages.yml?branch=main&style=for-the-badge&label=Deploy%20Pages" alt="Status do Deploy" />
+</p>
+
+## Links Rápidos
+
+- 🔗 Deploy: https://gilvaneidemedeiros.github.io/MareVista/
+- 💻 Repositório: https://github.com/GilvaneideMedeiros/MareVista
+- 🎓 Contexto de prática: Imersão Front-end da Alura
+
+## Preview
+
+<p align="center">
+   <img src="assets/tela_perfis.png" alt="Preview visual da identidade MareVista" width="860" />
+</p>
+
+## Visão Geral
+
+A MareVista é uma experiência fictícia de streaming criada para demonstrar design visual, personalização por perfil e navegação dinâmica, inspirada em produtos reais, mas com identidade própria.
 
 O projeto foi construído com HTML, CSS e JavaScript, com foco em portfólio e evolução prática de front-end.
 
-Este projeto também foi desenvolvido como prática da Imersão Front-end da Alura.
+## Sumário
+
+- [Destaques](#destaques)
+- [Tecnologias](#tecnologias)
+- [Identidade e Design](#identidade-e-design)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Executar Localmente](#como-executar-localmente)
+- [Fluxo da Aplicação](#fluxo-da-aplicação)
+- [Deploy](#deploy)
+- [Observações](#observações)
+- [Autora](#autora)
 
 ## Destaques
 
@@ -23,6 +67,16 @@ Este projeto também foi desenvolvido como prática da Imersão Front-end da Alu
 - JavaScript (ES Modules)
 - GitHub Pages
 - GitHub Actions
+
+## Stack Visual
+
+| Camada | Tecnologias |
+|---|---|
+| Estrutura | HTML5 |
+| Estilo | CSS3 |
+| Comportamento | JavaScript (ES Modules) |
+| Publicação | GitHub Pages |
+| CI/CD | GitHub Actions |
 
 ## Identidade e Design
 
